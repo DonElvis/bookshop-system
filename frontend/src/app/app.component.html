@@ -1,0 +1,56 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{ title }}</span>
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Logout</button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen" class="sidenav">
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon matListItemIcon>dashboard</mat-icon>
+        <a matListItemTitle [routerLink]="'/dashboard'">Dashboard</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>point_of_sale</mat-icon>
+        <a matListItemTitle [routerLink]="'/pos'">POS</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>inventory</mat-icon>
+        <a matListItemTitle [routerLink]="'/inventory'">Inventory</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>shopping_bag</mat-icon>
+        <a matListItemTitle [routerLink]="'/products'">Products</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>people</mat-icon>
+        <a matListItemTitle [routerLink]="'/customers'">Customers</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>group</mat-icon>
+        <a matListItemTitle [routerLink]="'/staff'">Staff</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>bar_chart</mat-icon>
+        <a matListItemTitle [routerLink]="'/reports'">Reports</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

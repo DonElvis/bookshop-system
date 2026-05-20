@@ -1,0 +1,54 @@
+<div class="dashboard-container">
+  <h1>Dashboard</h1>
+  
+  <div class="stats-grid">
+    <mat-card class="stat-card">
+      <mat-card-header>
+        <mat-icon>attach_money</mat-icon>
+        <span>Total Sales</span>
+      </mat-card-header>
+      <mat-card-content>
+        <h2>{{ statistics.totalSales | currency }}</h2>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-header>
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Total Orders</span>
+      </mat-card-header>
+      <mat-card-content>
+        <h2>{{ statistics.totalOrders }}</h2>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-header>
+        <mat-icon>people</mat-icon>
+        <span>Customers</span>
+      </mat-card-header>
+      <mat-card-content>
+        <h2>{{ statistics.totalCustomers }}</h2>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card alert">
+      <mat-card-header>
+        <mat-icon>warning</mat-icon>
+        <span>Low Stock Items</span>
+      </mat-card-header>
+      <mat-card-content>
+        <h2>{{ statistics.lowStockItems }}</h2>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <mat-card class="recent-orders">
+    <mat-card-header>
+      <mat-card-title>Recent Orders</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Orders will appear here once transactions are processed.</p>
+    </mat-card-content>
+  </mat-card>
+</div>
